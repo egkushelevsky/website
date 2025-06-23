@@ -23,7 +23,7 @@ export const Navbar = () => {
     }, [])
 
 
-    return <nav className={cn("fixed w-full z-40 transition-all duration-300",
+    return <nav className={cn("fixed w-full z-40 transition-all duration-300 font-stix",
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
     )}
     >
@@ -38,7 +38,7 @@ export const Navbar = () => {
             {/* Computer navbar*/}
             <div className='hidden md:flex space-x-8'>
                 {NavItems.map((item, key) => (
-                    <a key={key} href={item.href} className='text-primary/80 hover:italic'>
+                    <a key={key} href={item.href} className='text-primary/80 hover:font-stix-italic'>
                         {item.name}
                     </a>
                 ))}
