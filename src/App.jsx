@@ -2,6 +2,7 @@ import { Home } from "lucide-react"
 import { BrowserRouter, Route } from "react-router-dom"
 import { NotFound } from "./pages/NotFound"
 
+
 function App() {
   return (
     <>
