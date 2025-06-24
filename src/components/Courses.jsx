@@ -23,7 +23,7 @@ export const Courses = () => {
     return (
         <section id="courses" className="py-24 px-4 relative bg-secondary/30">
             <div className="container mx-auto max-w-5xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-left">
+                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                     Courses
                 </h2>
 
@@ -34,15 +34,15 @@ export const Courses = () => {
                           onClick={() => setActiveYear(year)}
                           className={cn(
                             "px-5 py-5 rounded-full transition-colors duration-300 capitalize",
-                            activeYear === year ? "bg-primary text-primary-foreground"
-                            : "bg-secondary/70 text-foreground hover:italic"
+                            activeYear === year ? "bg-primary/20 text-primary-foreground hover:italic"
+                            : "bg-secondary/10 text-foreground hover:italic"
                           )}>{year}</button>
                     ))}
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {filteredCourses.map((course, key) => (
-                        <div key={key} className="bg-card p-6 rounded-lg shadow-xs card-hover">
+                        <div key={key} className="bg-primary/20 p-6 outline-1 outline-primary backdropp-blur-md rounded-lg shadow-xs card-hover">
                             <div className="text-left mb-4">
                                 <h3 className="font-semibold text-lg"> {course.name}</h3>
                                 <h4 className="font-italic text-md">{course.code}</h4>

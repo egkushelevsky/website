@@ -20,7 +20,7 @@ const projects = [
 export const Projects = () => {
     return <section id="projects" className="py-24 px-4 relative">
         <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-bold text-center">Projects</h2>
 
             <p className="text-center text-muted-foreground-center mb-12 max-w-2xl mx-auto">
                 For projects without links listed, please email for access.
@@ -28,7 +28,7 @@ export const Projects = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {projects.map((project, key) => (
-                    <div key={key} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
+                    <div key={key} className="group bg-primary/20 outline-1 outline-primary rounded-lg overflow-hidden shadow-xs card-hover">
                         <div className="h-48 overflow-hidden">
                             <img src={project.image} alt={project.title} 
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
