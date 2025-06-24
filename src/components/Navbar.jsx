@@ -1,4 +1,5 @@
 import {cn} from '@/lib/utils';
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from 'react';
 
 const NavItems = [
@@ -55,7 +56,7 @@ export const Navbar = () => {
                         className='md:hidden p-2 text-primary z-50'
                         aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
                     >
-                    {isMenuOpen ? <X size={24}/> : <Menu size={24}/> }
+                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
                 </button>
                 <div className='flex-col space-y-8 text-xl'>
                     {NavItems.map((item, key) => (

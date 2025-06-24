@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: Stix;
   src: url(./assets/fonts/STIXTwoText-VariableFont_wght.ttf);
@@ -7,8 +9,6 @@
   font-family: StixItalic;
   src: url(./assets/fonts/STIXTwoText-Italic-VariableFont_wght.ttf);
 }
-
-@import "tailwindcss"; 
 
 @theme {
   --color-border: hsl(var(--border));
@@ -20,9 +20,6 @@
 
   --color-card: hsl(var(--card));
 
-  --font-stix: Stix, "sans-serif"
-  --font-stix-italic: StixItalic, "sans-serif"
-
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
@@ -30,6 +27,7 @@
   --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+  --animate-meteor: meteor 5s linear infinite;
 
   @keyframes float {
     0%,
@@ -40,17 +38,6 @@
       transform: translateY(-10px);
     }
   }
-
-  @keyframes pulse-subtle {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.8;
-    }
-  }
-
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -61,21 +48,12 @@
       transform: translateY(0);
     }
   }
-
-  @keyframes meteor {
-    0%,
-    70% {
-      transform: rotate(215deg) translateX(0);
-      opacity: 1
-    }
-    100% {
-      transform: rotate(215deg) translateX(-500px);
-      opacity: 0
-    }
-  }
 }
 
 @layer base {
+  html, body {
+    height: 100%;
+  }
   :root {
     --background: 349 80% 84%;
     --foreground: 0 0% 100%;
@@ -86,20 +64,27 @@
     --primary-foreground: 344 71% 96%;
 
     --border: 343 71% 92%;
+
   }
-}
 
-* {
-  @apply border-border;
-}
+  * {
+    @apply border-border;
+  }
 
-html {
-  @apply scroll-smooth;
-}
+  html {
+    @apply scroll-smooth;
+  }
 
-body {
-  @apply text-foreground transition-colors duration-300;
-  font-feature-settings: "rlig" 1, "calt" 1;
+  body {
+    @apply text-foreground transition-colors duration-300;
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: Stix, serif;
+  }
 }
 
 @utility container {
@@ -125,12 +110,11 @@ body {
 
 @utility text-glow {
   @apply relative;
-  text-shadow: 0 0 10px rgba(250, 140, 195, 0.5);
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
 }
 
-@utility text-glow {
+@utility card-hover {
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
-  text-shadow: 0 0 10px rgba(250, 140, 195, 0.5);
 }
 
 @utility gradient-border {
@@ -141,11 +125,10 @@ body {
 }
 
 @utility page-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
-         transition-all duration-300 hover:shadow-[0_0_10px_rgba(245,91,142,0.5)]
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
+         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
          hover:scale-105 active:scale-95;
 }
-
 
 #root {
   max-width: 100%;

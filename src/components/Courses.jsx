@@ -41,14 +41,14 @@ export const Courses = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {courses.map(course, key) = (
+                    {filteredCourses.map((course, key) => (
                         <div key={key} className="bg-card p-6 rounded-lg shadow-xs card-hover">
                             <div className="text-left mb-4">
-                                <h3 className="font-semibold text-lg"> {key.name}</h3>
-                                <h4 className="font-italic text-md">{key.code}</h4>
+                                <h3 className="font-semibold text-lg"> {course.name}</h3>
+                                <h4 className="font-italic text-md">{course.code}</h4>
                             </div>
                         </div>
-                    )}
+                    ))}
                 </div>
             </div>
         </section>
