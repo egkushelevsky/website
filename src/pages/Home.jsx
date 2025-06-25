@@ -9,8 +9,7 @@ import { Footer } from "../components/Footer";
 export const Home = () => {
     return (
         <div
-        className=/*"min-h-screen  w-full bg-background bg-cover bg-center bg-no-repeat text-foreground overflow-x-hidden"*/
-        "min-h-screen flex flex-col items-center justify-center">
+        className= "min-h-screen flex flex-col items-center ">
 
         <Navbar />
 

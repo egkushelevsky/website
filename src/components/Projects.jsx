@@ -11,7 +11,7 @@ const projects = [
     {
         id: 2,
         title: "SNAP for Students",
-        description: "Hackathon project addressing food insecurity for college students.",
+        description: "Hackathon project addressing food insecurity for college students. Includes a forum with other users, eligibility quiz, and AI chatbot.",
         image: "/images/SNAP.png",
         url: "https://github.com/jaysonedu/devfest2025"
     }
@@ -20,7 +20,7 @@ const projects = [
 export const Projects = () => {
     return <section id="projects" className="py-24 px-4 relative">
         <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-bold text-center">Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-bold text-center hover:italic">Projects</h2>
 
             <p className="text-center text-muted-foreground-center mb-12 max-w-2xl mx-auto">
                 For projects without links listed, please email for access.
@@ -34,26 +34,31 @@ export const Projects = () => {
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                         </div>
 
-                        <div className="p-6">
-                            <h3 className="text-xl font-semibold mb-1">
+                        <div className="p-6 flex flex-col h-full">
+                            <h3 className="text-xl font-semibold mb-1 hover:italic">
                                 {project.title}
                             </h3>
 
                             <p className="test-muted-foreground text-sm mb-4">{project.description}</p>
                             <div className="flex justify-between items-center">
-                                <div className="flex space-x-3">
-                                    <a 
-                                    href="mailto:egkushelevsky@gmail.com" 
-                                    target="_blank"
-                                    className="text-forground/80 hover:text-primary duration-300">
-                                        <Mail size={20}/>
-                                    </a>
-                                    <a 
-                                    href={project.url} 
-                                    target="_blank"
-                                    className="text-forground/80 hover:text-primary duration-300">
-                                        <Github size={20}/>
-                                    </a>
+                                <div className="mt-auto flex space-x-3">
+                                    {project.url ? (
+                                        <a
+                                        href={project.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-foreground/80 hover:text-primary duration-300"
+                                        >
+                                            <Github size={20} />
+                                        </a>
+                                        ) : (
+                                        <a
+                                        href="mailto:email@gmail.com"
+                                        className="text-foreground/80 hover:text-primary duration-300"
+                                        >
+                                            <Mail size={20} />
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>

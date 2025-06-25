@@ -30,7 +30,7 @@ export const Navbar = () => {
     >
         <div className='container flex items-center justify-between'>
             {/* Name */}
-            <a className='text-xl font-bold text-primary flex items-center' href='#home'>
+            <a className='text-xl font-bold text-primary flex items-center hover:italic' href='#home'>
                 <span>
                     Elizabeth Kushelevsky
                 </span>
@@ -39,7 +39,7 @@ export const Navbar = () => {
             {/* Computer navbar*/}
             <div className='hidden md:flex space-x-8'>
                 {NavItems.map((item, key) => (
-                    <a key={key} href={item.href} className='text-primary/80 hover:font-stix-italic'>
+                    <a key={key} href={item.href} className='text-primary hover:italic'>
                         {item.name}
                     </a>
                 ))}
